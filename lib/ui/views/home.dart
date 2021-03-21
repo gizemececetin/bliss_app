@@ -5,6 +5,7 @@ import 'package:blissemojiapp/ui/widgets/inkwell_custom_button.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -16,13 +17,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final TextEditingController _userNameController = TextEditingController();
 
-  var randomEmojiUrl;
+  var randomEmojiUrl= "".obs;
 
   Future<void> getRandomEmoji(HomeViewModel model) async {
     var randomEmoji = await model.getRandomEmoji();
-    setState(() {
-      randomEmojiUrl = randomEmoji;
-    });
+    randomEmojiUrl.value = randomEmoji;
   }
 
   @override
@@ -61,9 +60,9 @@ class _HomePageState extends State<HomePage> {
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    randomEmojiUrl != null
+                                    Obx(() =>randomEmojiUrl.value != ""
                                         ? CachedNetworkImage(
-                                            imageUrl: randomEmojiUrl,
+                                            imageUrl: randomEmojiUrl.value,
                                             placeholder: (context, url) =>
                                                 Container(
                                               color: Colors.transparent,
@@ -81,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                                                   BorderRadius.circular(10),
                                               color: Colors.white30,
                                             ),
-                                            child: Text("NO IMAGE SELECTED")),
+                                            child: Text("NO IMAGE SELECTED")),),
                                     SizedBox(
                                       height: size.height * 0.08,
                                     ),
@@ -136,13 +135,14 @@ class _HomePageState extends State<HomePage> {
                                               )),
                                         ),
                                         IconButton(
+                                          color: UIColor.colorSecondaryShade,
                                             icon: Icon(Icons.search),
                                             onPressed: () async {
                                               var avatar =
                                                   await model.getAndSaveAvatar(
                                                       _userNameController.text);
                                               setState(() {
-                                                randomEmojiUrl = avatar;
+                                                randomEmojiUrl.value = avatar;
                                               });
                                             })
                                       ],

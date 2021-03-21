@@ -35,6 +35,8 @@ dependencies:
   cached_network_image: ^2.5.1
   firebase_core: ^1.0.1
   cloud_firestore: ^1.0.1
+  get: ^3.26.0
+
 
 
 dev_dependencies:
