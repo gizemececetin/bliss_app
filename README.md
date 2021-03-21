@@ -1,2 +1,8 @@
-# bliss_emoji_app
+# bliss__app
  Bliss App
+ 
+ Firebase
+ Get_it
+ Provider
+ GetX
+ 
