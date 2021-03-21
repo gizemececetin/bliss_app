@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "220252319433",
+    "project_id": "bliss-emoji-app",
+    "storage_bucket": "bliss-emoji-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:220252319433:android:c223f8fed937bd188be718",
+        "android_client_info": {
+          "package_name": "com.mobilivid.blissemojiapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "220252319433-acnjptkl9ph1nfvkscn2hafebdr9j4hv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTCRgVGb00IveC5Ir_xE879SED_W15HkI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "220252319433-acnjptkl9ph1nfvkscn2hafebdr9j4hv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
