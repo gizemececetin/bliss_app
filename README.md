@@ -1,4 +1,4 @@
-# bliss__app
+# Emoji Application with GetX
  Bliss App
  A new Flutter project.
  
